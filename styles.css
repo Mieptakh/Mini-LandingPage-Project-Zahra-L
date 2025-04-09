@@ -1,0 +1,505 @@
+:root {
+    --primary: #f0e6f6;
+    --accent: #d0a9f5;
+    --text-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    --gradient: linear-gradient(135deg, #e0bbff, #d5aaff, #cbaacb);
+    --font-main: 'Outfit', sans-serif;
+    --golden: 1.618;
+  }
+  
+  /* RESET */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-main);
+    background: var(--gradient);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    color: var(--text-color);
+    overflow-x: hidden;
+    line-height: 1.618;
+    font-size: 16px;
+  }
+  
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* HERO */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(15px);
+    box-shadow: var(--shadow);
+    border-radius: 2rem;
+    padding: calc(1rem * var(--golden));
+    text-align: center;
+    max-width: 550px;
+    width: 100%;
+    animation: fadeIn 1.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 1.2rem;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+  
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    background: white;
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: scale(1.2) rotate(5deg);
+  }
+  
+  .btn.linkedin { color: #0077b5; }
+  .btn.youtube { color: #ff0000; }
+  .btn.tiktok { color: #000; }
+  .btn.instagram { color: #e1306c; }
+  
+  /* SECTIONS */
+  section {
+    padding: 5rem 2rem;
+  }
+  
+  /* SOCIAL SECTION */
+  .social-section {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+  
+  .social-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .social-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
+  }
+  
+  .social-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .social-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .social-card p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+  
+  .stats {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .stats li {
+    margin: 4px 0;
+    font-size: 0.9rem;
+  }
+  
+  .follow-btn {
+    margin-top: auto;
+    background: white;
+    color: black;
+    padding: 0.7rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .follow-btn:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.2);
+  }
+  
+  /* CONTACT */
+  .contact {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contact-box {
+    max-width: 600px;
+    background: var(--glass-bg);
+    padding: 3rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  
+  .contact-box h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-box p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: black;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  .contact-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+  }
+  
+  .contact-btn i {
+    font-size: 1.2rem;
+  }
+  
+  .contact-btn.whatsapp { color: #25D366; }
+  .contact-btn.email { color: #D44638; }
+  
+  /* ABOUT */
+  .about {
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+  }
+  
+  .about-glass {
+    max-width: 800px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow);
+    padding: 3rem;
+    text-align: center;
+  }
+  
+  .about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    font-weight: 300;
+  }
+  
+  /* HIGHLIGHT EFFECT */
+  .highlight {
+    animation: pulse-highlight 1.5s ease;
+  }
+  
+  @keyframes pulse-highlight {
+    0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+    50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); }
+    100% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .glass {
+      padding: 2rem 1.5rem;
+    }
+  
+    .profile-pic {
+      width: 110px;
+      height: 110px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    .tagline {
+      font-size: 1rem;
+    }
+  
+    .btn {
+      width: 42px;
+      height: 42px;
+      font-size: 1.1rem;
+    }
+  
+    .contact-box {
+      padding: 2rem 1rem;
+    }
+  
+    .contact-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  .site-footer {
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 3rem 2rem;
+    color: var(--text-color);
+    font-family: var(--font-main);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Kontainer utama footer */
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+    padding: 0 2rem;
+  }
+  
+  .footer-info,
+  .footer-branding {
+    flex: 1 1 45%;
+  }
+  
+  .footer-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-info p,
+  .footer-branding p {
+    font-size: 1rem;
+    line-height: 1.618;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1rem;
+  }
+  
+  /* Branding bagian kanan */
+  .footer-branding {
+    text-align: right;
+  }
+  
+  .footer-branding img {
+    width: 120px;
+    margin-bottom: 1rem;
+    opacity: 0.75;
+  }
+  
+  .footer-link {
+    color: #ffebf9; /* warna pastel terang yang stand out tapi masih lembut */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }  
+  
+  /* Bagian bawah copyright */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Responsive untuk tablet */
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+  
+    .footer-info,
+    .footer-branding {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .footer-branding img {
+      margin: 1rem auto;
+    }
+  }
+  
+  /* Responsive untuk HP */
+  @media (max-width: 767px) {
+    .site-footer {
+      padding: 2.5rem 1rem;
+    }
+  
+    .footer-container {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+      padding: 0;
+    }
+  
+    .footer-info h2 {
+      font-size: 1.5rem;
+    }
+  
+    .footer-info p,
+    .footer-branding p {
+      font-size: 0.95rem;
+    }
+  
+    .footer-branding img {
+      width: 100px;
+      margin: 0 auto 1rem;
+    }
+  
+    .footer-bottom {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* Responsive untuk layar super kecil (≤ 400px) */
+@media (max-width: 400px) {
+    .site-footer {
+      padding: 2rem 1rem;
+    }
+  
+    .footer-info h2 {
+      font-size: 1.3rem;
+    }
+  
+    .footer-info p,
+    .footer-branding p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+  
+    .footer-container {
+      padding: 0 1rem;
+      gap: 1.5rem;
+    }
+  
+    .footer-branding img {
+      width: 80px;
+      margin-bottom: 0.8rem;
+    }
+  
+    .footer-bottom {
+      font-size: 0.75rem;
+      padding-top: 1rem;
+    }
+  
+    .footer-link {
+      font-size: 0.9rem;
+    }
+  }
+  
+  
