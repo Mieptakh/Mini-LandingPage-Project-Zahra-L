@@ -1,14 +1,14 @@
 :root {
-    --primary: #f0e6f6;
-    --accent: #d0a9f5;
-    --text-color: #ffffff;
-    --glass-bg: rgba(255, 255, 255, 0.12);
-    --glass-border: rgba(255, 255, 255, 0.25);
-    --shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-    --gradient: linear-gradient(135deg, #e0bbff, #d5aaff, #cbaacb);
+    --primary: #fdf6ee;            /* Cream soft background */
+    --accent: #b07b56;             /* Coklat latte untuk link dan aksen */
+    --text-color: #3e2f2f;         /* Coklat gelap elegan untuk teks */
+    --glass-bg: rgba(255, 248, 240, 0.15); /* Glassmorphism dengan nuansa cream */
+    --glass-border: rgba(176, 123, 86, 0.25); /* Border coklat latte transparan */
+    --shadow: 0 12px 30px rgba(62, 47, 47, 0.15); /* Shadow coklat lembut */
+    --gradient: linear-gradient(135deg, #f3e9dd, #e7d1b8, #d0a78b); /* Creamy gradient */
     --font-main: 'Outfit', sans-serif;
     --golden: 1.618;
-  }
+  }  
   
   /* RESET */
   * {
@@ -20,13 +20,13 @@
   body {
     font-family: var(--font-main);
     background: var(--gradient);
-    background-size: 400% 400%;
-    animation: gradientShift 20s ease infinite;
+    background-size: 300% 300%;
+    animation: gradientShift 25s ease infinite;
     color: var(--text-color);
     overflow-x: hidden;
-    line-height: 1.618;
+    line-height: var(--golden);
     font-size: 16px;
-  }
+  }  
   
   @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
