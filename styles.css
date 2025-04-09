@@ -1,11 +1,11 @@
 :root {
-    --primary: #fdf6ee;            /* Cream soft background */
-    --accent: #b07b56;             /* Coklat latte untuk link dan aksen */
-    --text-color: #3e2f2f;         /* Coklat gelap elegan untuk teks */
+    --primary: #4b3f39; /* Coklat gelap elegan untuk background utama */
+    --accent: #b07b56;   /* Coklat latte untuk link dan aksen */
+    --text-color: #f5eae0; /* Cream soft yang kontras & hangat untuk teks di atas background gelap */
     --glass-bg: rgba(255, 248, 240, 0.15); /* Glassmorphism dengan nuansa cream */
     --glass-border: rgba(176, 123, 86, 0.25); /* Border coklat latte transparan */
-    --shadow: 0 12px 30px rgba(62, 47, 47, 0.15); /* Shadow coklat lembut */
-    --gradient: linear-gradient(135deg, #f3e9dd, #e7d1b8, #d0a78b); /* Creamy gradient */
+    --shadow: 0 12px 30px rgba(245, 234, 224, 0.15); /* Shadow terang lembut, biar efek glowing */
+    --gradient: linear-gradient(135deg, #5e4c45, #7c665b, #a0897a); /* Gradient coklat earthy */
     --font-main: 'Outfit', sans-serif;
     --golden: 1.618;
   }  
@@ -54,16 +54,14 @@
     height: 100vh;
     padding: 2rem;
     position: relative;
+    color: #3a2c21;
   }
   
   .glass {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(15px);
-    box-shadow: var(--shadow);
-    border-radius: 2rem;
-    padding: calc(1rem * var(--golden));
+    background: #fffefc;
     text-align: center;
+    padding: 3rem 1.5rem;
+    border-radius: 1.5rem;
     max-width: 550px;
     width: 100%;
     animation: fadeIn 1.5s ease;
@@ -145,24 +143,26 @@
   }  
   
 
-  /* SECTIONS */
-  section {
+/* ======== SECTION UMUM ======== */
+section {
     padding: 5rem 2rem;
   }
   
-  /* SOCIAL SECTION */
+  /* ======== SOCIAL SECTION ======== */
   .social-section {
-    background: rgba(255, 255, 255, 0.07);
     backdrop-filter: blur(10px);
     text-align: center;
   }
   
+  /* Section Title */
   .section-title {
     font-size: 2.2rem;
     margin-bottom: 3rem;
     font-weight: 700;
+    color: #fffefc /* Cream soft untuk title */
   }
   
+  /* Grid Cards */
   .social-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -171,12 +171,13 @@
     margin: 0 auto;
   }
   
+  /* Individual Card */
   .social-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: #fffefc; /* Warna card creamy */
+    border: 1px solid rgba(62, 47, 47, 0.15); /* Border dark brown transparan */
     border-radius: 1.5rem;
     padding: 2rem;
-    box-shadow: var(--shadow);
+    box-shadow: 0 12px 30px rgba(62, 47, 47, 0.15); /* Shadow lembut coklat tua */
     backdrop-filter: blur(12px);
     transition: all 0.4s ease;
     display: flex;
@@ -186,9 +187,10 @@
   
   .social-card:hover {
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 14px 34px rgba(62, 47, 47, 0.2);
   }
   
+  /* Foto Profile */
   .social-card img {
     width: 80px;
     height: 80px;
@@ -198,17 +200,22 @@
     margin-bottom: 1rem;
   }
   
+  /* Nama */
   .social-card h3 {
     font-size: 1.2rem;
     margin-bottom: 0.3rem;
+    color: #3e2f2f;
   }
   
+  /* Deskripsi */
   .social-card p {
     font-size: 0.9rem;
     margin-bottom: 1rem;
-    opacity: 0.8;
+    opacity: 0.85;
+    color: #3e2f2f;
   }
   
+  /* Stats */
   .stats {
     list-style: none;
     padding: 0;
@@ -218,26 +225,28 @@
   .stats li {
     margin: 4px 0;
     font-size: 0.9rem;
+    color: #3e2f2f;
   }
   
+  /* Tombol Follow */
   .follow-btn {
     margin-top: auto;
-    background: #3e2f23; /* deep choco brown */
-    color: #f5efe6;       /* soft cream text */
+    background: #3e2f2f;   /* Deep dark brown */
+    color: #fdf6ee;         /* Soft cream text */
     padding: 0.7rem 1.5rem;
     border-radius: 2rem;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px rgba(62, 47, 47, 0.15);
   }
   
   .follow-btn:hover {
     transform: scale(1.05) translateY(-3px);
-    background: #4e392b; /* slightly lighter brown hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    color: #ffffff; /* white text saat hover biar lebih contrast */
-  }  
+    background: #4e392b; /* Hover state – lebih terang sedikit */
+    box-shadow: 0 8px 20px rgba(62, 47, 47, 0.25);
+    color: #fffefc;
+  }
   
   /* CONTACT */
   .contact {
@@ -247,7 +256,7 @@
   
   .contact-box {
     max-width: 600px;
-    background: var(--glass-bg);
+    background: #fffefc;
     padding: 3rem;
     border: 1px solid var(--glass-border);
     border-radius: 1.5rem;
@@ -257,11 +266,13 @@
   
   .contact-box h2 {
     font-size: 2rem;
+    color: #3a2c21;
     margin-bottom: 1rem;
   }
   
   .contact-box p {
     font-size: 1rem;
+    color: #3a2c21;
     margin-bottom: 2rem;
   }
   
@@ -305,35 +316,39 @@
     color: #e1a497; /* warm terracotta pink */
   }  
   
-/* ABOUT */
+/* ======== ABOUT SECTION ======== */
 .about {
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(12px);
     padding: 3rem 1.5rem;
+    color: #fffefc;
   }
   
   .about-glass {
     width: 100%;
-    max-width: 800px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    max-width: 550px;
+    background: #fffefc; /* Soft cream with transparency */
+    border: 1px solid rgba(176, 123, 86, 0.25); /* Latte-ish border */
     border-radius: 1.5rem;
-    box-shadow: var(--shadow);
+    box-shadow: 0 12px 30px rgba(62, 47, 47, 0.1); /* Soft brown shadow */
     padding: 3rem 2.5rem;
     text-align: center;
     box-sizing: border-box;
+    backdrop-filter: blur(10px);
+  }
+  .about h2 {
+    color: #3a2c21;
+    margin-bottom: 0.5rem;
   }
   
   .about-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    opacity: 0.95;
-    font-weight: 300;
+    font-weight: 400;
+    color: #3a2c21; /* Rich dark brown text */
   }
   
-  /* RESPONSIVE ADJUSTMENTS */
+  /* ======== RESPONSIVE ADJUSTMENTS ======== */
   @media (max-width: 768px) {
     .about {
       padding: 2.5rem 1.25rem;
@@ -362,12 +377,15 @@
       font-size: 0.95rem;
       line-height: 1.6;
     }
+    .glass {
+        padding: 2.5rem 1.5rem;
+    }
   }  
   
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .glass {
-      padding: 2rem 1.5rem;
+        padding: 2.5rem 1.5rem;
     }
   
     .profile-pic {
@@ -411,180 +429,155 @@
     overflow: hidden;
   }
   
-  /* Kontainer utama footer */
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 3rem;
-    margin: 0 auto;
-    max-width: 1440px;
-    width: 100%;
-    padding: 0 2rem;
+  /* ==== Estetik Footer Styling (Font Outfit) ==== */
+.site-footer {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(145deg, #fef8f4, #f7ece2);
+    padding: 5.2rem 2rem 3rem;
+    box-shadow: 0 -4px 30px rgba(0,0,0,0.05);
+    color: #3e2f2f;
   }
   
-  .footer-info,
-  .footer-branding {
-    flex: 1 1 45%;
+  .footer-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .footer-info {
+    flex: 1 1 55%;
   }
   
   .footer-info h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #4b3f39; /* dark chocolate title */
+    font-size: 1.618rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
   }
   
-  .footer-info p,
-  .footer-branding p {
+  .footer-info p {
     font-size: 1rem;
     line-height: 1.618;
-    color: #4b3f39; /* dark chocolate title */
+    font-weight: 400;
     margin-bottom: 1rem;
   }
   
-  /* Branding bagian kanan */
   .footer-branding {
+    flex: 1 1 35%;
     text-align: right;
   }
   
   .footer-branding img {
-    width: 120px;
+    width: 130px;
     margin-bottom: 1rem;
-    opacity: 0.75;
+    opacity: 0.85;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-branding img:hover {
+    transform: scale(1.05);
+  }
+  
+  .footer-branding p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
   }
   
   .footer-link {
-    color: #4b3f39; /* dark chocolate title */
+    color: #3e2f2f;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.3s ease;
   }
   
   .footer-link:hover {
-    color: #4d3e37; /* dark chocolate title */
-    text-decoration: none;
-    font-weight: 700;
+    color: #2e1d1d;
   }
   
-  /* Copyright */
+  .slogan {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.95rem;
+  }
+  
   .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin-top: 2rem;
-    padding-top: 1.5rem;
+    border-top: 1px solid #d6c0b1;
+    padding-top: 1.618rem;
     text-align: center;
     font-size: 0.9rem;
-    color: #4b3f39; /* dark chocolate title */
+    font-weight: 400;
+    margin-top: 3rem;
   }
   
-  /* Tablet */
-  @media (max-width: 1024px) and (min-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 1.5rem;
-    }
-  
-    .footer-info,
-    .footer-branding {
-      width: 100%;
-      text-align: center;
-    }
-  
-    .footer-branding img {
-      margin: 1rem auto;
-    }
-  }
-  
-  /* HP */
-  @media (max-width: 767px) {
-    .site-footer {
-      padding: 2.5rem 1rem;
-    }
-  
-    .footer-container {
-      flex-direction: column;
-      gap: 2rem;
-      text-align: center;
-      padding: 0;
-    }
-  
+  /* ==== Responsive Fonts ==== */
+  @media (max-width: 768px) {
     .footer-info h2 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
   
     .footer-info p,
-    .footer-branding p {
+    .footer-branding p,
+    .slogan {
       font-size: 0.95rem;
+    }
+  
+    .footer-bottom {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-info h2 {
+      font-size: 1.25rem;
+    }
+  
+    .footer-info p,
+    .footer-branding p,
+    .slogan {
+      font-size: 0.85rem;
     }
   
     .footer-branding img {
       width: 100px;
-      margin: 0 auto 1rem;
-    }
-  
-    .footer-bottom {
-      font-size: 0.8rem;
-    }
-  }
-  
-  /* HP mini (≤ 400px) */
-  @media (max-width: 400px) {
-    .site-footer {
-      padding: 2rem 1rem;
-    }
-  
-    .footer-info h2 {
-      font-size: 1.3rem;
-    }
-  
-    .footer-info p,
-    .footer-branding p {
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-  
-    .footer-container {
-      padding: 0 1rem;
-      gap: 1.5rem;
-    }
-  
-    .footer-branding img {
-      width: 80px;
-      margin-bottom: 0.8rem;
     }
   
     .footer-bottom {
       font-size: 0.75rem;
-      padding-top: 1rem;
-    }
-  
-    .footer-link {
-      font-size: 0.9rem;
     }
   }
   
- /* ======== REKOMENDASI SECTION ======== */
+  
+/* ======== REKOMENDASI SECTION ======== */
 .recommended-products {
-    padding: 5.2rem 2.2rem;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 5rem 2rem;
     overflow-x: hidden;
   }
   
-  /* Title */
   .recommended-products .section-title {
     text-align: center;
-    font-size: 2rem;
-    color: #4b3f39;
-    margin-bottom: 3rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    position: relative;
+    margin-bottom: 1.2rem;
+    color: #fffefc;
     animation: fadeInDown 1s ease-in-out;
   }
   
-  /* Grid Wrapper */
+  /* Optional CTA Subtitle */
+  .recommended-products .section-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: #fffefc;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+  
+  /* Grid */
   .product-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -596,34 +589,32 @@
   
   /* Product Card */
   .product-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: #fffefc;; /* FIXED creamy brown bg */
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
     cursor: pointer;
+    box-shadow: 0 8px 24px rgba(62, 47, 47, 0.1);
   }
   
   .product-card:hover {
     transform: scale(1.03);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 14px 36px rgba(62, 47, 47, 0.2);
   }
   
   /* Numbering */
   .product-number {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: #4b3f39;
-    margin-top: 1rem;
-    display: block;
+    color: #3e2f2f;
+    margin: 1rem 0;
+    text-align: center;
   }
   
-  /* Product Image */
+  /* Image */
   .product-card img {
     width: 100%;
     aspect-ratio: 4 / 5;
@@ -638,26 +629,27 @@
   
   /* Product Info */
   .product-info {
-    padding: 1.618rem;
+    padding: 1.5rem;
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    color: #3e2f2f;
   }
   
   /* Category */
   .product-category {
     font-size: 0.9rem;
-    color: #4b3f39;
+    color: #3e2f2f;
     opacity: 0.85;
     margin-bottom: 0.3rem;
   }
   
   /* Title */
   .product-title {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    color: #4b3f39;
+    color: #3e2f2f;
     margin-bottom: 1rem;
   }
   
@@ -665,8 +657,8 @@
   .buy-btn {
     display: inline-block;
     background: transparent;
-    color: #4b3f39;
-    border: 2px solid #4b3f39;
+    color: #3e2f2f;
+    border: 2px solid #3e2f2f;
     padding: 0.618rem 1.2rem;
     border-radius: 30px;
     font-size: 0.95rem;
@@ -674,19 +666,47 @@
     transition: all 0.3s ease;
     text-decoration: none;
     margin-top: auto;
+    text-align: center;
   }
   
   .buy-btn:hover {
-    background: #4b3f39;
+    background: #3e2f2f;
     color: #fff;
-    box-shadow: 0 4px 15px rgba(75, 63, 57, 0.3);
+    box-shadow: 0 4px 15px rgba(62, 47, 47, 0.3);
     transform: scale(1.05);
   }
   
   /* ======== RESPONSIVE ======== */
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    .recommended-products {
+      padding: 4rem 1.5rem;
+    }
+  
     .recommended-products .section-title {
-      font-size: 1.6rem;
+      font-size: 1.9rem;
+    }
+  
+    .product-title {
+      font-size: 1.1rem;
+    }
+  
+    .product-info {
+      padding: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .recommended-products {
+      padding: 3.2rem 1rem;
+    }
+  
+    .recommended-products .section-title {
+      font-size: 1.7rem;
+    }
+  
+    .product-cards {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
   
     .product-title {
@@ -695,9 +715,30 @@
   
     .buy-btn {
       font-size: 0.9rem;
+      padding: 0.5rem 1rem;
     }
   
-    .product-cards {
-      gap: 1.5rem;
+    .product-info {
+      padding: 1.2rem;
     }
   }
+  
+  @media (max-width: 480px) {
+    .recommended-products {
+      padding: 2.5rem 1rem;
+    }
+  
+    .recommended-products .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .product-title {
+      font-size: 0.95rem;
+    }
+  
+    .buy-btn {
+      font-size: 0.85rem;
+      padding: 0.45rem 0.9rem;
+    }
+  }
+  
