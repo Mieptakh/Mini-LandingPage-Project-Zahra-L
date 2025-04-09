@@ -16,6 +16,19 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
   
   body {
     font-family: var(--font-main);
@@ -96,8 +109,8 @@
   }
   
   .btn {
-    background: white;
-    color: black;
+    background: #3e2f23; /* dark brown earthy background */
+    color: #f5efe6; /* creamy text */
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -105,17 +118,33 @@
     place-items: center;
     font-size: 1.4rem;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
   
   .btn:hover {
     transform: scale(1.2) rotate(5deg);
+    background: #4e392b; /* slightly lighter brown on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   }
   
-  .btn.linkedin { color: #0077b5; }
-  .btn.youtube { color: #ff0000; }
-  .btn.tiktok { color: #000; }
-  .btn.instagram { color: #e1306c; }
+  /* Social platform brand tones - soft & earthy */
+  .btn.linkedin {
+    color: #a4bbc6; /* soft dusty blue */
+  }
   
+  .btn.youtube {
+    color: #e19a9a; /* soft clay red */
+  }
+  
+  .btn.tiktok {
+    color: #b5a8a8; /* muted warm gray */
+  }
+  
+  .btn.instagram {
+    color: #d3a3b5; /* warm dusty pink */
+  }  
+  
+
   /* SECTIONS */
   section {
     padding: 5rem 2rem;
@@ -193,20 +222,22 @@
   
   .follow-btn {
     margin-top: auto;
-    background: white;
-    color: black;
+    background: #3e2f23; /* deep choco brown */
+    color: #f5efe6;       /* soft cream text */
     padding: 0.7rem 1.5rem;
     border-radius: 2rem;
     font-weight: 500;
     text-decoration: none;
-    transition: 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
   }
   
   .follow-btn:hover {
     transform: scale(1.05) translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255,255,255,0.2);
-  }
+    background: #4e392b; /* slightly lighter brown hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    color: #ffffff; /* white text saat hover biar lebih contrast */
+  }  
   
   /* CONTACT */
   .contact {
@@ -247,43 +278,54 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background: white;
-    color: black;
+    background: #3e2f23; /* dark brown background */
+    color: #f5efe6; /* creamy text */
     padding: 12px 24px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
   
   .contact-btn:hover {
     transform: translateY(-3px) scale(1.05);
+    background: #4e392b; /* slightly lighter brown on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   }
   
   .contact-btn i {
     font-size: 1.2rem;
   }
   
-  .contact-btn.whatsapp { color: #25D366; }
-  .contact-btn.email { color: #D44638; }
+  /* Soft brand tones with earthy tint */
+  .contact-btn.whatsapp {
+    color: #a4d4ae; /* earthy green */
+  }
   
-  /* ABOUT */
-  .about {
+  .contact-btn.email {
+    color: #e1a497; /* warm terracotta pink */
+  }  
+  
+/* ABOUT */
+.about {
     display: flex;
     justify-content: center;
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(12px);
+    padding: 3rem 1.5rem;
   }
   
   .about-glass {
+    width: 100%;
     max-width: 800px;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 1.5rem;
     box-shadow: var(--shadow);
-    padding: 3rem;
+    padding: 3rem 2.5rem;
     text-align: center;
+    box-sizing: border-box;
   }
   
   .about-text {
@@ -293,16 +335,36 @@
     font-weight: 300;
   }
   
-  /* HIGHLIGHT EFFECT */
-  .highlight {
-    animation: pulse-highlight 1.5s ease;
+  /* RESPONSIVE ADJUSTMENTS */
+  @media (max-width: 768px) {
+    .about {
+      padding: 2.5rem 1.25rem;
+    }
+  
+    .about-glass {
+      padding: 2.5rem 1.5rem;
+    }
+  
+    .about-text {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
   }
   
-  @keyframes pulse-highlight {
-    0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
-    50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); }
-    100% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
-  }
+  @media (max-width: 480px) {
+    .about {
+      padding: 2rem 1rem;
+    }
+  
+    .about-glass {
+      padding: 2rem 1rem;
+    }
+  
+    .about-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }  
   
   /* RESPONSIVE */
   @media (max-width: 768px) {
@@ -338,7 +400,7 @@
       justify-content: center;
     }
   }
-  
+
   .site-footer {
     width: 100vw;
     background: rgba(255, 255, 255, 0.05);
@@ -371,13 +433,14 @@
   .footer-info h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: #4b3f39; /* dark chocolate title */
   }
   
   .footer-info p,
   .footer-branding p {
     font-size: 1rem;
     line-height: 1.618;
-    color: rgba(255, 255, 255, 0.85);
+    color: #4b3f39; /* dark chocolate title */
     margin-bottom: 1rem;
   }
   
@@ -393,28 +456,29 @@
   }
   
   .footer-link {
-    color: #ffebf9; /* warna pastel terang yang stand out tapi masih lembut */
+    color: #4b3f39; /* dark chocolate title */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
   }
   
   .footer-link:hover {
-    color: #ffffff;
+    color: #4d3e37; /* dark chocolate title */
     text-decoration: none;
-  }  
+    font-weight: 700;
+  }
   
-  /* Bagian bawah copyright */
+  /* Copyright */
   .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     margin-top: 2rem;
     padding-top: 1.5rem;
     text-align: center;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: #4b3f39; /* dark chocolate title */
   }
   
-  /* Responsive untuk tablet */
+  /* Tablet */
   @media (max-width: 1024px) and (min-width: 768px) {
     .footer-container {
       flex-direction: column;
@@ -434,7 +498,7 @@
     }
   }
   
-  /* Responsive untuk HP */
+  /* HP */
   @media (max-width: 767px) {
     .site-footer {
       padding: 2.5rem 1rem;
@@ -465,9 +529,9 @@
       font-size: 0.8rem;
     }
   }
-
-  /* Responsive untuk layar super kecil (≤ 400px) */
-@media (max-width: 400px) {
+  
+  /* HP mini (≤ 400px) */
+  @media (max-width: 400px) {
     .site-footer {
       padding: 2rem 1rem;
     }
@@ -501,5 +565,3 @@
       font-size: 0.9rem;
     }
   }
-  
-  
